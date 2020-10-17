@@ -3,7 +3,7 @@ package main;
 public class Main {
 
 	public static void main(String[] args) {
-		//40. The String Pool
+		// 40. The String Pool
 		String one = "hello";
 		String two = "hello";
 
@@ -28,8 +28,15 @@ public class Main {
 		System.out.println(three == four);
 		System.out.println("---------------");
 
-		//41. Interning Strings
+		// 41. Interning Strings
 		Integer j = 76;
+		/**
+		 * https://stackoverflow.com/questions/10578984/what-is-java-string-interning
+		 * Basically doing String.intern() on a series of strings will ensure that all
+		 * strings having same contents share same memory. So if you have list of names
+		 * where 'john' appears 1000 times, by interning you ensure only one 'john' is
+		 * actually allocated memory.
+		 */
 		String five = j.toString().intern();
 		String six = "76";
 
