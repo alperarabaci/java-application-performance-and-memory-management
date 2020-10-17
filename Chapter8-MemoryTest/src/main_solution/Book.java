@@ -1,6 +1,6 @@
 package main_solution;
 
-public class Book {
+public class Book implements ReadOnlyBook{
 	private int id;
 	private String title;
 	private String author;

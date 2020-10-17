@@ -26,8 +26,8 @@ public class Main {
 		
 		//PROBLEM 2 - can we change a book?
 		//answer: we return a copy of Book, so we can't.
-		Book emma = bc.findBookByName("Emma");
-		emma.setPrice(999d);
+		ReadOnlyBook emma = bc.findBookByName("Emma");
+		//emma.setPrice(999d);
 		bc.printAllBooks();
 		
 		System.out.println("---END OF PROBLEM 2---");
@@ -37,7 +37,7 @@ public class Main {
 		//we shouldn't change the orginal value with other currencies.
 		//check convert method in price
 		//Print out the price of the book Tom Jones
-		Book book = bc.findBookByName("Tom Jones");
+		ReadOnlyBook book = bc.findBookByName("Tom Jones");
 		System.out.println("Tom Jones costs USD " + book.getPrice());
 		System.out.println("Tom Jones costs EUR " + book.getPrice().convert("EUR"));
 		System.out.println("Tom Jones costs GBP " + book.getPrice().convert("GBP"));
