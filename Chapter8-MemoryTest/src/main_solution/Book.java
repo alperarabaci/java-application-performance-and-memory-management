@@ -25,6 +25,13 @@ public class Book {
 		this.price = new Price(price);
 	}
 	
+	public Book(Book book) {
+		this.id = book.getId();
+		this.title = book.getTitle();
+		this.author = book.getAuthor();
+		this.price = new Price(book.getPrice());
+	}
+
 	public String toString() {
 		return title + " by " + author;
 	}

@@ -9,6 +9,14 @@ public class Price {
 	private Double value;
 	
 	public Price(Double value) {
+		initialize(value);
+	}
+
+	public Price(Price price) {
+		initialize(price.value);
+	}
+	
+	private void initialize(Double value) {
 		this.value = value;
 		rates = new HashMap<String,Double>();
 		rates.put("USD", 1d);
@@ -16,6 +24,7 @@ public class Price {
 		rates.put("EUR", 0.8);
 	}
 		
+
 	public Double convert(String toCurrency) {
 		
 		if (toCurrency.equals("USD")) {
@@ -23,8 +32,9 @@ public class Price {
 		}
 		else {
 			Double conversion = rates.get("USD") * rates.get(toCurrency);
-			value = conversion * value;
-			return value;
+			//we should not change orginal value!
+			//value = conversion * value;
+			return conversion * value;
 		}
 	}
 	
@@ -33,7 +43,11 @@ public class Price {
 	}
 	
 	public Map<String,Double> getRates() {
-		return rates;
+		/**
+		 * 
+			Map.copyOf is replacement of Collections unmodifiableMap()
+		 */
+		return Map.copyOf(rates);
 	}
 	
 }
