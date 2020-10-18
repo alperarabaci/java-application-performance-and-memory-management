@@ -2,10 +2,10 @@ package main;
 
 import java.util.Date;
 
-public class Main {
+public class Main01 {
 
 	public static void main(String[] args) throws InterruptedException {
-		//Thread.sleep(20000);
+		Thread.sleep(20000);
 		Date start = new Date();
 		System.out.println("Starting work...");
 		PrimeNumbers primeNumbers = new PrimeNumbers();
