@@ -31,6 +31,13 @@ public class CustomerHarness {
 		
 		Exception: java.lang.OutOfMemoryError thrown from the UncaughtExceptionHandler in thread "Thread-5"
 		
+		Chapter 13:
+		export heap dump:
+		--XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/Users/alper/development/java/java-application-performance-and-memory-management/heap-dump
+		
+		import dump to https://www.eclipse.org/mat/ for analysing heap dump
+		plug-in can also export dump using java process.
+		
 		Chapter 14:
 		We also use VisualVm VisualGC plug-in for monitoring. Great tool for monitor heap: old, eden, s1, s2
 	 * @param args
