@@ -3,7 +3,7 @@ package finalize;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainFinalize {
+public class Main11Finalize {
 	
 	/**
 	 *  After finalize workder:

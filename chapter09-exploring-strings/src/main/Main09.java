@@ -1,6 +1,6 @@
 package main;
 
-public class Main {
+public class Main09 {
 
 	public static void main(String[] args) {
 		// 40. The String Pool

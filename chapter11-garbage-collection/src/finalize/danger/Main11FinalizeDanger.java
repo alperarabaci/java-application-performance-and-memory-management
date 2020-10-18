@@ -1,17 +1,28 @@
-package main; 
+package finalize.danger; 
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+public class Main11FinalizeDanger {
 	
 	/**
-	 *  
-	 	Available memory at start: 260134k
-		Available memory  when customers created: 226834k
-		Available memory  when customers no longer referenced: 226834k
-		Available memory  1 second later: 226834k
-		Available memory  after GC command: 9533k
+	 *  After finalize workder:
+	 *  Result is changing at every run...
+		This object is being g.c. John74
+		This object is being g.c. John99
+		This object is being g.c. John98
+		This object is being g.c. John97
+		This object is being g.c. John96
+		This object is being g.c. John95
+		This object is being g.c. John94
+		This object is being g.c. John93
+		This object is being g.c. John92
+		This object is being g.c. John91
+		This object is being g.c. John90
+		This object is being g.c. John89
+		This object is being g.c. John88
+		This object is being g.c. John87
+		This object is being g.c. John86
 		
 	 * @param args
 	 * @throws InterruptedException
@@ -23,18 +34,14 @@ public class Main {
 		long availableBytes = runtime.freeMemory();
 		System.out.println("Available memory at start: " + availableBytes / 1024 + "k");
 
-		// let's create lots of objects....
-		List<Customer> customers = new ArrayList<Customer>();
 		
 		for (int i=0; i<1_000_000; i++)
 		{
-			customers.add(new Customer("John"));	
+			CustomerFinalizeDanger customers = new CustomerFinalizeDanger("John"+i);	
 		}
 		
 		availableBytes = runtime.freeMemory();
 		System.out.println("Available memory  when customers created: " + availableBytes / 1024 + "k");
-		
-		customers = new ArrayList<>();
 		
 		availableBytes = runtime.freeMemory();
 		System.out.println("Available memory  when customers no longer referenced: " + availableBytes / 1024 + "k");
