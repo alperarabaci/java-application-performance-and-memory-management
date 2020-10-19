@@ -1,5 +1,12 @@
 package main;
 
+import org.openjdk.jmh.annotations.Benchmark;
+
+/**
+ * https://github.com/openjdk/jmh/tree/master/jmh-samples/src/main/java/org/openjdk/jmh/samples
+ * @author alper
+ *
+ */
 public class NumberChecker {
 
 	public Boolean isPrime1(Integer testNumber) {
@@ -16,5 +23,18 @@ public class NumberChecker {
 		}
 		return true;
 	}
+
+	@Benchmark
+	public void version1() {
+		for (int i = 0; i < 50_000; i++) {
+			isPrime1(i);
+		}
+	}
 	
+	@Benchmark
+	public void version2() {
+		for (int i = 0; i < 50_000; i++) {
+			isPrime2(i);
+		}
+	}
 }
