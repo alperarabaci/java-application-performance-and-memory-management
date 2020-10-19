@@ -1,13 +1,12 @@
-package main;
+package main.improved;
 
 /**
  * vm arguments: -XX:+FlightRecorder
- * FlightRecorder report overview.html is under report folder.
  * 
  * @author alper
  *
  */
-public class Main16_80 {
+public class Main16_83 {
 
 	public static void main(String[] args) throws InterruptedException {
 		int target = 100;
