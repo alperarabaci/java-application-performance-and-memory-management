@@ -31,18 +31,27 @@
 
 package org.sample;
 
-import org.openjdk.jmh.annotations.Benchmark;
-
-
-
-
-
-
-
-
+/**
+ * step 1
+ * mvn archetype:generate \
+  -DinteractiveMode=false \
+  -DarchetypeGroupId=org.openjdk.jmh \
+  -DarchetypeArtifactId=jmh-java-benchmark-archetype \
+  -DgroupId=org.sample \
+  -DartifactId=chapter18-jmh \
+  -Dversion=1.0
+ * 
+ * step 2
+ * mvn clean install
+ * 
+ * step 3
+ * java -jar benchmarks.jar
+ * 
+ * @author alper
+ *
+ */
 public class MyBenchmark {
 
-    @Benchmark
     public void testMethod() {
         // This is a demo/sample template for building your JMH benchmarks. Edit as needed.
         // Put your benchmark code here.
