@@ -10,7 +10,7 @@ public class ListBenchmarking {
 
 	private static final int TOTAL = 10000000;
 	
-	@Benchmark
+	//@Benchmark
 	public static void listWithDefaultCap() {
 		
 		Date start = new Date();
@@ -24,7 +24,7 @@ public class ListBenchmarking {
 		System.out.println("Elapsed time was " + (end.getTime() - start.getTime()) +" ms.");
 	}
 	
-	@Benchmark
+	//@Benchmark
 	public static void listWithInitializeCap() {
 		Date start = new Date();
 		
