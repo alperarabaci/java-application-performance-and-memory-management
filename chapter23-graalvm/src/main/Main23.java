@@ -12,12 +12,25 @@ import java.util.UUID;
  * https://www.graalvm.org/docs/getting-started-with-graalvm/macos/
  * 
  * No any significant improvement?!?!?!
- * graalVM (jdk11): 6050 ms. 
- * JVM (jdk11): 6221 ms.
+ * GraalVM (jdk11): 6050 ms. 
+ * Java SE 11 (jdk11): 6221 ms.
+ * 
+
+   with -XX:+PrintCompilation parameter:
+   1970  581 %     4       main.Main23::main @ 66 (303 bytes)   made not entrant
+   1971  585       3       main.Main23::isPrime (41 bytes)
+   1972  586 %     4       main.Main23::isPrime @ 15 (41 bytes)
+   1973  587       4       main.Main23::isPrime (41 bytes)
+   1975  585       3       main.Main23::isPrime (41 bytes)   made not entrant
+   1982  588 %     3       main.Main23::main @ 167 (303 bytes)
+   2401  592 %     4       main.Main23::main @ 167 (303 bytes)
+   2408  588 %     3       main.Main23::main @ 167 (303 bytes)   made not entrant
+   6386  592 %     4       main.Main23::main @ 167 (303 bytes)   made not entrant
+
  * @author alper
  *
  */
-public class Main {
+public class Main23 {
 
 	public static boolean isPrime(long testNumber) {
 		long maxToCheck = (long) Math.sqrt(testNumber);
