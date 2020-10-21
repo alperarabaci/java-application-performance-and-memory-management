@@ -12,8 +12,10 @@ import java.util.UUID;
  * https://www.graalvm.org/docs/getting-started-with-graalvm/macos/
  * 
  * No any significant improvement?!?!?!
+ * Because we don't use GraalVM Native Compilation. :(
  * GraalVM (jdk11): 6050 ms. 
  * Java SE 11 (jdk11): 6221 ms.
+ * 
  * 
 
    with -XX:+PrintCompilation parameter:
